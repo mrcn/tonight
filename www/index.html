@@ -37,12 +37,12 @@
   </script>
 
   <!--Step 1-->
-  <script id="createEvent.html" type="text/ng-template">
+  <script id="stepOne.html" type="text/ng-template">
     <ion-view title="{{navTitle}}" left-buttons="leftButtons">
       <ion-content has-header="true" padding="true">
         <div class="list">
           <div class="item item-divider">
-            Step 1
+            Step 1 of 2
           </div>
           <div class="list card">
             <div class="item">
@@ -62,12 +62,12 @@
           </div>
           <div class="row">
             <div class="col">
-              <button class="button button-block button-stable">
-                <a href="#/stepTwo"> No Flyer?</a>
+              <button class="button button-block button-stable" ui-sref="main.noFlyer">
+                No Flyer?
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-positive" ui-sref="#stepTwo">Next</button>
+              <button class="button button-block button-positive" ui-sref="main.stepTwo">Next</button>
             </div>
           </div>
         </div>
@@ -81,32 +81,57 @@
       <ion-content has-header="true" padding="true">
         <div class="list">
           <div class="item item-divider">
-            Step 2
+            Step 2 of 2
           </div>
           <div class="list card">
-            <div class="item">
-              <h2>Upload Cover</h2>
-            </div>
-            <div class="item item-image">
-              <i class="ion-paperclip"></i>
-            </div>
+            <label class="item item-input">
+              <span class="input-label" placeholder="Jesus">Date</span>
+              <input type="text">
+            </label>
           </div>
           <div class="list card">
-            <div class="item">
-              <h2>Upload Back</h2>
-            </div>
+            <label class="item item-input">
+              <span class="input-label" placeholder="Jesus">Address</span>
+              <input type="text">
+            </label>
             <div class="item item-image">
-              <i class="ion-paperclip"></i>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <button class="button button-block button-stable">
-                <a href=""> No Flyer?    </a>
-              </button>
+              <button class="button button-block button-positive" ui-sref="main.stepTwo">Next</button>
             </div>
+          </div>
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+  <!--No Flyer-->
+  <script id="noFlyer.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+      <ion-content has-header="true" padding="true">
+        <div class="list">
+          <div class="item item-divider">
+            Add Event Information
+          </div>
+          <div class="list card">
+            <div class="item">
+              <h2>Event Name</h2>
+            </div>
+            <div class="item item-image">
+            </div>
+          </div>
+          <div class="list card">
+            <div class="item">
+              <h2>Event Details</h2>
+            </div>
+            <div class="item item-image">
+            </div>
+          </div>
+          <div class="row">
             <div class="col">
-              <button class="button button-block button-positive" ui-sref="createEvent.stepTwo">Next</button>
+              <button class="button button-block button-positive" ui-sref="main.stepTwo">Next</button>
             </div>
           </div>
       </ion-content>
@@ -115,7 +140,6 @@
 
   <script id="settings.html" type="text/ng-template">
     <ion-view title="{{navTitle}}" left-buttons="leftButtons">
-
       <ion-tabs tabs-type="tabs-icon-only">
         <ion-tab title="Tab 1" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
           <ion-content has-header="true" padding="true">
@@ -174,9 +198,7 @@
   </script>
 
   <script id="mainContainer.html" type="text/ng-template">
-
     <ion-side-menus>
-
       <ion-pane ion-side-menu-content>
         <ion-nav-bar type="bar-dark">
 
@@ -192,23 +214,18 @@
           <ul class="list">
             <a ui-sref="main.eventPicker" class="item" ng-click="toggleMenu()">Find Events</a>
             <a ui-sref="main.settings" class="item" ng-click="toggleMenu()">Settings</a>
-            <a ui-sref="main.createEvent" class="item" ng-click="toggleMenu()">Create Event</a>
+            <a ui-sref="main.stepOne" class="item" ng-click="toggleMenu()">Create Event</a>
             <a ui-sref="main.tabs" class="item" ng-click="toggleMenu()">Support</a>
             <a ui-sref="entry" class="item">Logout</a>
           </ul>
         </ion-content>
       </ion-side-menu>
-
     </ion-side-menus>
-
-
   </script>
 
 
   <script id="eventPicker.html" type="text/ng-template">
-
     <ion-view title="{{navTitle}}" left-buttons="leftButtons">
-
       <ion-tabs tabs-type="tabs-icon-only">
         <ion-tab title="Tab 1" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
           <ion-content has-header="true" padding="true">

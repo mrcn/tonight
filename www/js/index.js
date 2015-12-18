@@ -37,21 +37,30 @@ angular.module('ionicApp', ['ionic'])
                 }
             })
 
-            .state('main.createEvent', {
-                 url: '/createEvent',
+            .state('main.stepOne', {
+                 url: '/stepOne',
                  views: {
                      'main': {
-                         templateUrl: 'createEvent.html',
-                         controller : 'CreateEventController'
+                         templateUrl: 'stepOne.html',
+                         controller : 'StepOneController'
                      }
                  }
             })
             .state('main.stepTwo', {
-                 url: '/createEvent',
+                 url: '/stepTwo',
                  views: {
                      'main': {
                          templateUrl: 'stepTwo.html',
                          controller : 'StepTwoController'
+                     }
+                 }
+            })
+            .state('main.noFlyer', {
+                 url: '/noFlyer',
+                 views: {
+                     'main': {
+                         templateUrl: 'noFlyer.html',
+                         controller : 'NoFlyerController'
                      }
                  }
             })
@@ -65,7 +74,6 @@ angular.module('ionicApp', ['ionic'])
                      }
                  }
             })
-
         $urlRouterProvider.otherwise('/entry');
     }])
 
@@ -119,7 +127,7 @@ angular.module('ionicApp', ['ionic'])
         }];
     }])
 
-    .controller('CreateEventController', [ '$scope', '$state', function($scope, $state) {
+    .controller('StepOneController', [ '$scope', '$state', function($scope, $state) {
         $scope.navTitle = 'Create Event';
 
         $scope.leftButtons = [{
@@ -130,6 +138,16 @@ angular.module('ionicApp', ['ionic'])
         }];
     }])
     .controller('StepTwoController', [ '$scope', '$state', function($scope, $state) {
+        $scope.navTitle = 'Create Event';
+
+        $scope.leftButtons = [{
+            type: 'button-icon icon ion-navicon',
+            tap: function(e) {
+                $scope.toggleMenu();
+            }
+        }];
+    }])
+    .controller('NoFlyerController', [ '$scope', '$state', function($scope, $state) {
         $scope.navTitle = 'Create Event';
 
         $scope.leftButtons = [{

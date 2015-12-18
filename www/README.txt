@@ -1,3 +1,8 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/anon/pen/MKayzX.
+a toy app for posting stuff.
 
- A starter Ionic app with sidemenu and tabs.
+
+
+
+Contact:
+twitter: @mrcni
+email: makepeopleup@gmail.com
