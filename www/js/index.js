@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic'])
+angular.module('tonightApp', ['ionic'])
 
 
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -61,6 +61,15 @@ angular.module('ionicApp', ['ionic'])
                      'main': {
                          templateUrl: 'noFlyer.html',
                          controller : 'NoFlyerController'
+                     }
+                 }
+            })
+            .state('main.eventLog', {
+                 url: '/eventLog',
+                 views: {
+                     'main': {
+                         templateUrl: 'eventLog.html',
+                         controller : 'EventLogController'
                      }
                  }
             })
@@ -148,6 +157,16 @@ angular.module('ionicApp', ['ionic'])
         }];
     }])
     .controller('NoFlyerController', [ '$scope', '$state', function($scope, $state) {
+        $scope.navTitle = 'Create Event';
+
+        $scope.leftButtons = [{
+            type: 'button-icon icon ion-navicon',
+            tap: function(e) {
+                $scope.toggleMenu();
+            }
+        }];
+    }])
+    .controller('EventLogController', [ '$scope', '$state', function($scope, $state) {
         $scope.navTitle = 'Create Event';
 
         $scope.leftButtons = [{
