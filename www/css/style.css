@@ -1,0 +1,32 @@
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+i.ion-paperclip {
+  font-size: 90px;
+}
+
+.entry {
+  text-align: center;
+  margin: auto 0;
+}
+.entry h1{
+  margin-top: 100px;
+}
+
+.entry .button{
+  margin-top:100px;
+}
+
+
+.event-picker {
+  text-align: center;
+  margin: auto 0;
+}
+.event-picker h1{
+  margin-top: 100px;
+}
+
+.event-picker .button{
+  margin-top:100px;
+}

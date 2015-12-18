@@ -1,0 +1,18 @@
+{
+  "name": "ionictabs",
+  "description": "ionicTabs: An Ionic project",
+  "main": "",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic-ion-tinder-cards": "ionic-contrib-tinder-cards#*"
+  }
+}
