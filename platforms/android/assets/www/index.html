@@ -1,0 +1,349 @@
+<html ng-app="tonightApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <title>Ionic Template</title>
+
+  <link href="http://code.ionicframework.com/0.9.27/css/ionic.min.css" rel="stylesheet">
+  <!-- <script src="lib/ionic/js/ionic.bundle.beta.js"></script> -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <script src="http://code.ionicframework.com/0.9.27/js/ionic.bundle.min.js"></script>
+  <!-- <script src="js/app.js"></script> -->
+  <!-- <script src="js/ionic.swipecards.js"></script> -->
+
+</head>
+
+<body class="platform-android platform-cordova platform-webview">
+
+  <!-- ALL VIEW STATES LOADED IN HERE -->
+  <ion-nav-view></ion-nav-view>
+
+  <script id="entry.html" type="text/ng-template">
+    <ion-nav-bar animation="nav-title-slide-ios7" type="bar-light">
+    </ion-nav-bar>
+
+    <ion-view title="{{navTitle}}" class="bubble-background">
+
+      <ion-content has-header="true" padding="true">
+        <div class="entry">
+          <h1>Tonight</h1>
+          <a class="button button-positive" ng-click="signIn()" ui-sref="main.eventPicker">Sign In</a>
+        </div>
+      </ion-content>
+    </ion-view>
+  </script>
+
+  <!--Step 1-->
+  <script id="stepOne.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+      <ion-content has-header="true" padding="true">
+        <div class="list">
+          <div class="item item-divider">
+            Step 1 of 2
+          </div>
+          <div class="list card">
+            <div class="item">
+              <h2>Upload Cover</h2>
+            </div>
+            <div class="item item-image">
+              <i class="ion-paperclip"></i>
+            </div>
+          </div>
+          <div class="list card">
+            <div class="item">
+              <h2>Upload Back</h2>
+            </div>
+            <div class="item item-image">
+              <i class="ion-paperclip"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="button button-block button-stable" ui-sref="main.noFlyer">
+                No Flyer?
+              </button>
+            </div>
+            <div class="col">
+              <button class="button button-block button-positive" ui-sref="main.stepTwo">Step 2</button>
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-view>
+  </script>
+
+  <!--Step 2-->
+  <script id="stepTwo.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+      <ion-content has-header="true" padding="true">
+        <div class="list">
+          <div class="item item-divider">
+            Step 2 of 2
+          </div>
+          <div class="list card">
+            <label class="item item-input">
+              <span class="input-label" placeholder="Jesus">Date</span>
+              <input type="date">
+            </label>
+          </div>
+          <div class="list card">
+            <label class="item item-input">
+              <span class="input-label" placeholder="Jesus">Address</span>
+              <input type="text">
+            </label>
+            <div class="item item-image">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="button button-block button-positive" ui-sref="main.eventLog">Finish</button>
+            </div>
+          </div>
+      </ion-content>
+    </ion-view>
+  </script>
+
+
+  <!--No Flyer-->
+  <script id="noFlyer.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+      <ion-content has-header="true" padding="true">
+        <div class="list">
+          <div class="item item-divider">
+            Add Event Information
+          </div>
+          <div class="list card">
+            <div class="item">
+              <h2>Event Name</h2>
+            </div>
+            <div class="item item-image">
+            </div>
+          </div>
+          <div class="list card">
+            <div class="item">
+              <h2>Event Details</h2>
+            </div>
+            <div class="item item-image">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="button button-block button-positive" ui-sref="main.stepTwo">Step 2</button>
+            </div>
+          </div>
+      </ion-content>
+    </ion-view>
+  </script>
+
+  <script id="settings.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+      <ion-content has-header="true" padding="true">
+        <div class="row">
+          <div class="col">
+            <h3>Account </h3>
+            <label class="item item-input">
+              <span class="input-label" placeholder="Jesus">Username</span>
+              <input type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input type="email">
+            </label>
+            <h3> App Settings </h3>
+            <ion-checkbox ng-model="isChecked.evenReminder">Push Event Reminders</ion-checkbox>
+            <ion-checkbox ng-model="isChecked.eventUpdate">Event Updates</ion-checkbox>
+            <ion-checkbox ng-model="isChecked.newEvent">New Events</ion-checkbox>
+            <div class="item range">
+              <i class="icon ion-location"></i>
+              <input type="range" name="radius">
+              <i class="icon ion-location"></i>
+            </div>
+            <h3> Interests </h3>
+            <ion-checkbox ng-model="isChecked.food">Food</ion-checkbox>
+            <ion-checkbox ng-model="isChecked.music">Music</ion-checkbox>
+            <ion-checkbox ng-model="isChecked.alcohol">Alcohol</ion-checkbox>
+            <ion-checkbox ng-model="isChecked.film">Film</ion-checkbox>
+          </div class="col">
+        </div class="row">
+        <div class="row">
+          <div class="col">
+            <button class="button button-block button-positive">Save</button>
+            <br>
+            <br>
+          </div>
+        </div>
+      </ion-content>
+
+    </ion-view>
+  </script>
+
+
+
+
+
+  <!-- hold on -->
+  <script id="eventLog.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+      <ion-tabs tabs-type="tabs-icon-only">
+        <ion-tab title="Tab 1" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+          <ion-content has-header="true" padding="true">
+            <div class="row">
+              <div class="col">
+                <h3>Event Log </h3>
+
+                <div class="list card">
+                  <div class="item item-avatar">
+                    <img src="img/pic.png">
+                    <h2>Event Name</h2>
+                    <p>Sub-header</p>
+                  </div>
+
+                  <div class="item item-image">
+                    <img src="img/pic.png">
+                  </div>
+
+                  <a class="item item-icon-left positive" ui-sref="main.info">
+                    <i class="icon ion-more"></i> Details
+                  </a>
+                </div>
+                <div class="list card">
+                  <div class="item item-avatar">
+                    <img src="img/pic.png">
+                    <h2>Event Name</h2>
+                    <p>Sub-header</p>
+                  </div>
+
+                  <div class="item item-image">
+                    <img src="img/pic.png">
+                  </div>
+
+                  <a class="item item-icon-left positive" ui-sref="main.info">
+                    <i class="icon ion-more"></i> Details
+                  </a>
+                </div>
+              </div class="col">
+            </div class="row">
+            <div class="row">
+              <div class="col">
+                <button class="button button-block button-positive">Save</button>
+                <br>
+                <br>
+              </div>
+            </div>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab title="Tab 2" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+          <ion-content has-header="true" padding="true">
+            <h2>Settings Tab 2</h2>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab title="Tab 3" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+          <ion-content has-header="true" padding="true">
+            <h2>Settings Tab 3</h2>
+          </ion-content>
+        </ion-tab>
+      </ion-tabs>
+
+
+    </ion-view>
+  </script>
+
+  <!-- END HOLD ON -->
+
+
+
+
+
+
+
+  <script id="mainContainer.html" type="text/ng-template">
+    <ion-side-menus>
+      <ion-pane ion-side-menu-content>
+        <ion-nav-bar type="bar-dark">
+
+        </ion-nav-bar>
+        <ion-nav-view name="main"></ion-nav-view>
+      </ion-pane>
+
+      <ion-side-menu side="left">
+        <header class="bar bar-header bar-royal">
+          <div class="title">Navigation</div>
+        </header>
+        <ion-content has-header="true">
+          <ul class="list">
+            <a ui-sref="main.eventPicker" class="item" ng-click="toggleMenu()">Find Events</a>
+            <a ui-sref="main.settings" class="item" ng-click="toggleMenu()">Settings</a>
+            <a ui-sref="main.stepOne" class="item" ng-click="toggleMenu()">Create Event</a>
+            <a ui-sref="main.tabs" class="item" ng-click="toggleMenu()">Support</a>
+            <a ui-sref="entry" class="item">Logout</a>
+          </ul>
+        </ion-content>
+      </ion-side-menu>
+    </ion-side-menus>
+  </script>
+
+
+  <script id="eventPicker.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+      <ion-tabs tabs-type="tabs-icon-top">
+        <ion-tab title="Tonight" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+          <ion-content has-header="true" padding="true">
+            <h2>Event Picker</h2>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab title="Events" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+          <ion-content has-header="true" padding="true">
+            <h2>Events</h2>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab title="Tab 3" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+          <ion-content has-header="true" padding="true">
+            <h2>Your Events</h2>
+          </ion-content>
+        </ion-tab>
+      </ion-tabs>
+    </ion-view>
+  </script>
+
+  <script id="info.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+
+      <ion-content has-header="true" padding="true">
+
+        <div class="list card">
+          <div class="item item-avatar">
+            <img src="img/pic.png">
+            <h2>Event Name</h2>
+            <p>Sub-header</p>
+          </div>
+
+          <div class="item item-image">
+            <img src="img/pic.png">
+          </div>
+          <button class="button button-block button-positive"> <i class="ion-location"></i> 5171 w Jackson st, Chicago, Il 60629 </button>
+
+          <p> The best directional evenatn for and every explore towns and burni cities worldwides. Displayng addres on a map, view kearby businnes, get driving directions and maps, and plan a ... </p>
+
+
+        </div>
+      </ion-content>
+
+    </ion-view>
+
+  </script>
+
+  <script src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
