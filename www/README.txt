@@ -1,4 +1,7 @@
 a toy app for posting stuff.
+from root:
+cmd> ionic serve
+
 
 to-do list
 1. implement event picker
@@ -12,3 +15,4 @@ would be nice
 Contact:
 twitter: @mrcni
 email: makepeopleup@gmail.com
+
